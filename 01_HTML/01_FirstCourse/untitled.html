@@ -1,11 +1,69 @@
+<!--이후 코드가 HTML파일이라는 선언. HTML5는 다음과 같이 작성-->
 <!DOCTYPE html>
 
-<title> My first website</title>
+<!-- title: 페이지의 제목. 브라우저 탭 혹은 방문기록에 나타나는 제목이다-->
 
-<h1> my first page </h1>
-<h2> I'm studying </h2>
-<p> example example 
-example example example example example example 
-example example example example example example 
-example example example example example 
-example example example example example example </p>
+<html>
+  <head>
+    <title> My first website</title>
+    <meta charset="utf-8">  <!-- utf-8방식으로 출력. 한글출력을 위해 필요-->
+
+    <!--폰트 사이즈, 정렬, 여백 등 스타일 지정-->
+    <style>
+    h1 {
+      font-size: 64px;
+      text-align: center;
+    }
+
+    h3 {
+      margin-top: : 100px; 
+    }
+
+    i {
+      font-size: : 24px;
+    }
+    p i {
+      font-size: : 56px;
+    }
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    </style>
+  </head>
+
+  <body>
+    <!-- <h1>~<h6> 태그. 사이즈는 순서에 따라 내림차순 -->
+    <h1> my first page </h1>
+    <h2> I'm studying </h2>
+
+    <!-- p는 문단을 의미한다 -->
+    <p> example example 
+    example example example example example example 
+    example example example example example example 
+    example example example example example 
+    example example example example example example </p>
+
+    <!-- bold처리 -->
+    <p> This is <b>bold</b> string </p>
+    <!-- 
+      strong처리: 이 태그는 감싸고 있는 텍스트가 중요하다는 의미를 담아 bold체로 표시할 때 씀.
+      스크린리더(시각장애인 등 웹 접근성 향상목적)가 글을 읽어줄 때 강조해서 읽을 수 있음. 
+    -->
+    <p> This is <strong>italic</strong> string </p>
+
+    <!-- italic처리 -->
+    <p> This is <i>italic</i> string </p>
+    <!-- 
+      em처리: 이 태그는 strong처럼 감싸고 있는 텍스트가 중요하다는 의미를 담아 italic체로 표시할 때 씀. 
+      스크린리더(시각장애인 등 웹 접근성 향상목적)가 글을 읽어줄 때 강조해서 읽을 수 있음. 
+    -->
+    <p> This is <strong>italic</strong> string </p>
+    <!-- 외부 페이지로 갈 때는 target="_blank"-->
+    <a href="page2.html" target="_blank"> 구글로 가는 링크 </a>
+    <img src="https://mblogthumb-phinf.pstatic.net/20131013_90/viralfilm_1381592311946QOGat_JPEG/romeo-et-juliette-1997-23-g.jpg?type=w800" width="100" height="100">
+    <img src="imageTest.png" width="10%">
+  </body>
+
+</html>
