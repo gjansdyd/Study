@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+  <title> id/class example </title>
+  <meta charset="utf-8">
+  <style>
+    .big-blue-text {
+      font-size: 64px;
+      color: blue;
+    }
+    .centered-text {
+      text-align: center;
+    }
+
+    #best-text {
+
+    }
+  </style>
+</head>
+
+<body>
+  <h1> Heading1 </h1>
+  <h2 class="big-blue-text">Heading2</h2>
+
+<!-- id-->   
+  <p id="best-text">첫 번째 문단 </p>
+
+  <p>두 번째 문단 </p>
+  <!-- 클래스는 두 개를 동시에 받을 수 있다 -->
+  <p class="big-blue-text centered-text">세 번째 문단 </p>
+</body>
+
+<!--
+class는 중복가능. 한 요소가 여러 클래스 가능
+id는 중복불가능. 한 요소가 아이디 하나만 가질 수 있음.
+즉, 여러 요소를 스타일링 하고 싶으면 class
+한 요소만 스타일링 하고 싶으면 id
+
+--> 
