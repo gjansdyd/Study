@@ -7,12 +7,47 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class MenuViewController: UIViewController {
-    // MARK: - Life Cycle
-
+    
+    let viewModel = MenuListViewModel()
+    let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        viewModel.menuObservable //menuobservable값이 바뀌면 bind 된 ui를 바꿔라.
+            .observeOn(MainScheduler.instance)
+            .bind(to: tableView.rx.items(cellIdentifier: "MenuItemTableViewCell",
+                  cellType: MenuItemTableViewCell.self)) { index, item, cell in
+                cell.title.text = item.name
+                cell.price.text = "\(item.price)"
+                cell.count.text = "\(item.count)"
+                
+                cell.onChange = { [weak self] increase in
+                    self?.viewModel.changeCount(item, increase)
+                }
+            }.disposed(by: disposeBag)
+        
+        // RxCocoa는 RxSwift의 요소들을
+        // UIKit의 extension에 종속시킨 녀석들
+        
+        // Binder? Bind시킬 수 있다.
+        // subscribe를 하지 않고
+        // bind해서
+        
+        viewModel.itemsCount
+            .map { "\($0)" }
+            .observeOn(MainScheduler.instance)
+            .bind(to: itemCountLabel.rx.text) // 순환참조 우려 없음
+            .disposed(by: disposeBag)
+        
+        viewModel.totalPrice
+            .map { $0.currencyKR() }
+            .observeOn(MainScheduler.instance)
+            .bind(to: totalPrice.rx.text)
+            .disposed(by: disposeBag)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -37,27 +72,15 @@ class MenuViewController: UIViewController {
     @IBOutlet var totalPrice: UILabel!
 
     @IBAction func onClear() {
+        viewModel.clearAllItemSelections()
     }
 
     @IBAction func onOrder(_ sender: UIButton) {
         // TODO: no selection
         // showAlert("Order Fail", "No Orders")
-        performSegue(withIdentifier: "OrderViewController", sender: nil)
-    }
-}
-
-extension MenuViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuItemTableViewCell") as! MenuItemTableViewCell
-
-        cell.title.text = "MENU \(indexPath.row)"
-        cell.price.text = "\(indexPath.row * 100)"
-        cell.count.text = "0"
-
-        return cell
+//        performSegue(withIdentifier: "OrderViewController", sender: nil)
+//        self.viewModel.itemsCount += 1
+//        viewModel.me.onNext(100)
+        viewModel.onOrder()
     }
 }
