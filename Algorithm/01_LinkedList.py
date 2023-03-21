@@ -1,5 +1,8 @@
 #  https://leetcode.com/problems/design-browser-history/
 
+from typing import Deque
+
+
 class BrowserNode: 
     def __init__(self, homepage: str) -> None:
         self.homepage = homepage
