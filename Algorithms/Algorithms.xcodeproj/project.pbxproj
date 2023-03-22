@@ -10,6 +10,9 @@
 		BA93D9FA29C95C39001A72FA /* 01_BrowserHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93D9F929C95C39001A72FA /* 01_BrowserHistory.swift */; };
 		BA93D9FD29C95F33001A72FA /* 02_DailyTemperatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93D9FC29C95F33001A72FA /* 02_DailyTemperatures.swift */; };
 		BA93D9FF29C95F96001A72FA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93D9FE29C95F96001A72FA /* main.swift */; };
+		BA93DA0129CA82A3001A72FA /* 02_DailyTemperatures2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93DA0029CA82A3001A72FA /* 02_DailyTemperatures2.swift */; };
+		BA93DA0529CA9A87001A72FA /* TwoSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93DA0429CA9A87001A72FA /* TwoSum.swift */; };
+		BA93DA0829CAA00E001A72FA /* LongestConsecutiveSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93DA0729CAA00E001A72FA /* LongestConsecutiveSequence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +32,9 @@
 		BA93D9F929C95C39001A72FA /* 01_BrowserHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 01_BrowserHistory.swift; sourceTree = "<group>"; };
 		BA93D9FC29C95F33001A72FA /* 02_DailyTemperatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 02_DailyTemperatures.swift; sourceTree = "<group>"; };
 		BA93D9FE29C95F96001A72FA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		BA93DA0029CA82A3001A72FA /* 02_DailyTemperatures2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 02_DailyTemperatures2.swift; sourceTree = "<group>"; };
+		BA93DA0429CA9A87001A72FA /* TwoSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoSum.swift; sourceTree = "<group>"; };
+		BA93DA0729CAA00E001A72FA /* LongestConsecutiveSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongestConsecutiveSequence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +69,20 @@
 			children = (
 				BA93D9F929C95C39001A72FA /* 01_BrowserHistory.swift */,
 				BA93D9FC29C95F33001A72FA /* 02_DailyTemperatures.swift */,
+				BA93DA0029CA82A3001A72FA /* 02_DailyTemperatures2.swift */,
+				BA93DA0629CA9A99001A72FA /* 03_HashTable */,
 				BA93D9FE29C95F96001A72FA /* main.swift */,
 			);
 			path = Algorithms;
+			sourceTree = "<group>";
+		};
+		BA93DA0629CA9A99001A72FA /* 03_HashTable */ = {
+			isa = PBXGroup;
+			children = (
+				BA93DA0429CA9A87001A72FA /* TwoSum.swift */,
+				BA93DA0729CAA00E001A72FA /* LongestConsecutiveSequence.swift */,
+			);
+			path = 03_HashTable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA93D9FA29C95C39001A72FA /* 01_BrowserHistory.swift in Sources */,
+				BA93DA0529CA9A87001A72FA /* TwoSum.swift in Sources */,
+				BA93DA0829CAA00E001A72FA /* LongestConsecutiveSequence.swift in Sources */,
+				BA93DA0129CA82A3001A72FA /* 02_DailyTemperatures2.swift in Sources */,
 				BA93D9FD29C95F33001A72FA /* 02_DailyTemperatures.swift in Sources */,
 				BA93D9FF29C95F96001A72FA /* main.swift in Sources */,
 			);
